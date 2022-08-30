@@ -140,10 +140,37 @@ class office{
     this.employees = tempEmployee;
 
     function checkId(emplID){
-      return emplID != empId;
+      return emplID.id != empId;
     }
   }
 }
+
+
+function startProgram(){
+
+  while(true){
+    let usrInput= window.prompt("Enter the function you want to do: "+
+    "\nAdding a new employee, hire an employee, fire an employee, search for an employee and list all Employees details");
+    let usrInputLower = usrInput.toLowerCase();
+
+    if(usrInputLower.includes("add") || usrInputLower === "add"){
+       
+
+    }else if(usrInputLower.includes("hire") || usrInputLower === "hire"){
+
+    }else if(usrInputLower.includes("fire") || usrInputLower === "fire"){
+
+    }else if(usrInputLower.includes("search") || usrInputLower === "search" ){
+
+    }else if(usrInputLower.includes("list") || usrInputLower.includes("list all") || usrInputLower === "list all"){
+      
+    }
+
+  }
+}
+
+
+
 ////////// Calling Tasks Funtions //////////
 
 // Task 1 
@@ -151,4 +178,9 @@ class office{
 // Task 2 
 
 
-// Task 3 
+// Task 3
+
+
+
+
+
