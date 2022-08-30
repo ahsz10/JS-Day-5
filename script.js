@@ -1,5 +1,7 @@
 // Lab 5
-// Task 
+// 
+
+// Task 0 
 class PersonClass{
   constructor(name,money) {
     this.name = name;
@@ -39,7 +41,53 @@ class PersonClass{
   }
 }
 
+class employee extends PersonClass{
+  constructor(name,money,salary,email,isManager) {
+    super(name,money);
+    this.salary=salary;
+    this.id=email;
+    this.email=email;
+    this.workMood;
+    this.isManager=isManager;
+  }
 
+  work(hours){
+    if(hours > 0){
+      if(hours === 8){
+        this.workMood= "happy";
+      }else if(hours > 8){
+        this.workMood= "tired";
+      }else if(hours < 8){
+        this.workMood= "lazy";
+      }
+    }else{
+      console.log("Invalid input");
+    }
+  }
+}
+
+class office{
+
+  constructor(name){
+    this.name=name;
+    this.employees= new Array();
+  }
+
+  getAllEmployees(){
+    for(let i=0;i<this.employees.length;i++){
+      console.log("Name: "+this.employees[i].name+"\nId and Email: ")
+    }
+  }
+
+  getEmployee(id){
+    for(let i=0;i<this.employees.length;i++){
+      if(this.employees[i].isManager === true){
+        console.log();
+      }
+    }
+  }
+
+}
 ////////// Calling Tasks Funtions //////////
 
 // Task 1 
