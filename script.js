@@ -172,7 +172,8 @@ function startProgram(){
 
   while(true){
     let usrInput= window.prompt("Enter the function you want to do: "+
-    "\nAdding a new employee, hire an employee, fire an employee, search for an employee and list all Employees details");
+    "\nAdding a new employee, hire an employee, fire an employee, search for an employee and list all Employees details"+
+    "\n Note to Quit the application please enter \'quit\' or \'q\'");
     let usrInputLower = usrInput.toLowerCase();
 
     if(usrInputLower.includes("add") || usrInputLower === "add"){
@@ -180,13 +181,16 @@ function startProgram(){
       mainEmplyee.push(temp);
     }else if(usrInputLower.includes("hire") || usrInputLower === "hire"){
       alert("Please make sure that you added the before choosing Hire")
-
+      // mainOffice.hire()
     }else if(usrInputLower.includes("fire") || usrInputLower === "fire"){
 
     }else if(usrInputLower.includes("search") || usrInputLower === "search" ){
       mainOffice.getEmployee((window.prompt("Searching for an Employee \nEnter Email or ID: ")).toLowerCase);
     }else if(usrInputLower.includes("list") || usrInputLower.includes("list all") || usrInputLower === "list all"){
-
+      mainOffice.getAllEmployees();
+    }else if(usrInputLower === "quit" || usrInputLower === "q"){
+      alert("Terminating the application")
+      break;
     }
 
   }
