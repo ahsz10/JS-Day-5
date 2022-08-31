@@ -4,9 +4,10 @@ var id=1;
 
 // Task 0 
 class PersonClass{
-  constructor(name,money) {
+  constructor(name,age) {
     this.name = name;
-    this.money = money;
+    this.money = 100;
+    this.age = age;
     this.sleepMood;
     this.healthRate;
   }
@@ -43,8 +44,8 @@ class PersonClass{
 }
 
 class employee extends PersonClass{
-  constructor(name,money,salary,email,isManager) {
-    super(name,money);
+  constructor(name,age,salary,email,isManager) {
+    super(name,age);
     this.salary=salary;
     this.id=i;
     i+=1;
@@ -146,7 +147,28 @@ class office{
 }
 
 
+function createEmployee(){
+    const name = (window.prompt("Enter Name: ")).toLowerCase;
+    const age = (window.prompt("Enter Age: ")).toLowerCase;
+    const salary = (window.prompt("Enter Salary: ")).toLowerCase;
+    const email = (window.prompt("Enter email: ")).toLowerCase;
+    const manager = (window.prompt("Is he a manager:\n (Yes/No) ")).toLowerCase; 
+    let manFlag = false;
+    if(manager === "yes"|| manager === "y" || manager.includes("yes")){
+      manFlag = true;
+    }
+    let temp = new employee(name,age,salary,email,manFlag);
+
+    return temp;
+}
+
+function searchEmployee(){
+
+}
 function startProgram(){
+
+  let mainEmplyee = new Array();
+  let mainOffice = new office(office1);
 
   while(true){
     let usrInput= window.prompt("Enter the function you want to do: "+
@@ -154,16 +176,17 @@ function startProgram(){
     let usrInputLower = usrInput.toLowerCase();
 
     if(usrInputLower.includes("add") || usrInputLower === "add"){
-       
-
+      let temp = createEmployee();
+      mainEmplyee.push(temp);
     }else if(usrInputLower.includes("hire") || usrInputLower === "hire"){
+      alert("Please make sure that you added the before choosing Hire")
 
     }else if(usrInputLower.includes("fire") || usrInputLower === "fire"){
 
     }else if(usrInputLower.includes("search") || usrInputLower === "search" ){
-
+      mainOffice.getEmployee((window.prompt("Searching for an Employee \nEnter Email or ID: ")).toLowerCase);
     }else if(usrInputLower.includes("list") || usrInputLower.includes("list all") || usrInputLower === "list all"){
-      
+
     }
 
   }
