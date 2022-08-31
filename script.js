@@ -162,28 +162,24 @@ function createEmployee(){
     return temp;
 }
 
-function searchEmployee(){
-
+function searchEmployee(office,id){
+  return index
 }
 function startProgram(){
-
-  let mainEmplyee = new Array();
   let mainOffice = new office(office1);
 
   while(true){
     let usrInput= window.prompt("Enter the function you want to do: "+
-    "\nAdding a new employee, hire an employee, fire an employee, search for an employee and list all Employees details"+
+    "\nAdding a new employee(hire an employee), fire an employee, search for an employee and list all Employees details"+
     "\n Note to Quit the application please enter \'quit\' or \'q\'");
     let usrInputLower = usrInput.toLowerCase();
 
-    if(usrInputLower.includes("add") || usrInputLower === "add"){
-      let temp = createEmployee();
-      mainEmplyee.push(temp);
-    }else if(usrInputLower.includes("hire") || usrInputLower === "hire"){
-      alert("Please make sure that you added the before choosing Hire")
-      // mainOffice.hire()
+    if(usrInputLower.includes("hire") || usrInputLower === "hire" || usrInputLower.includes("add") || usrInputLower === "add"){
+      // alert("Please make sure that you added the before choosing Hire")
+      mainOffice.hire(createEmployee());
     }else if(usrInputLower.includes("fire") || usrInputLower === "fire"){
-
+      let fireId = window.prompt("Firing an Employee \nEnter Email or ID: ");
+      searchEmployee(mainOffice,fireId);
     }else if(usrInputLower.includes("search") || usrInputLower === "search" ){
       mainOffice.getEmployee((window.prompt("Searching for an Employee \nEnter Email or ID: ")).toLowerCase);
     }else if(usrInputLower.includes("list") || usrInputLower.includes("list all") || usrInputLower === "list all"){
