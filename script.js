@@ -151,7 +151,7 @@ function searchEmployee(office,id){
 }
 
 function startProgram(){
-  let mainOffice = new office(office1);
+  let mainOffice = new office(newOffice1);
 
   while(true){
     let usrInput= window.prompt("Enter the function you want to do: "+
