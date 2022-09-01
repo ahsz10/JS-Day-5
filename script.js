@@ -148,7 +148,7 @@ function createEmployee(){
       manFlag = false;
     }
     let temp = new employee(nameLower,age,salary,emailLower,manFlag);
-    console.log(temp);
+    //console.log(temp);
 
     return temp;
 }
