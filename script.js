@@ -111,29 +111,6 @@ class office{
     this.employees.push(emp);
   }
 
-
-  
-  /*fire(empId){
-    for(let i=0;i<this.employees.length;i++){
-      if(this.employees[i].id == empId){
-        if(i==0){
-          this.employees.shift();
-          break;
-        }else if(i == (this.employees.length-1)){
-          this.employees.pop();
-          break;
-        }else{
-          let tempEmployee = this.employees.filter(checkId)
-
-          checkId(emplID){
-            return emplID != empId;
-          }
-
-        }
-      }
-    }
-  }*/
-
   fire(empId){
 
     let tempEmployee = this.employees.filter(checkId);
@@ -163,8 +140,16 @@ function createEmployee(){
 }
 
 function searchEmployee(office,id){
-  return index
+  let flag=false;
+  for(let i=0;i<office.employees.length;i++){
+    if(office.employees[i].id == id){
+      flag=true;
+      break;
+    }
+  }
+  return flag;
 }
+
 function startProgram(){
   let mainOffice = new office(office1);
 
@@ -179,7 +164,12 @@ function startProgram(){
       mainOffice.hire(createEmployee());
     }else if(usrInputLower.includes("fire") || usrInputLower === "fire"){
       let fireId = window.prompt("Firing an Employee \nEnter Email or ID: ");
-      searchEmployee(mainOffice,fireId);
+      if(searchEmployee(mainOffice,fireId)){
+        mainOffice.fire(fireId);
+        alert("The employee with id: "+fireId+" is fired")
+      }else{
+        alert("Invalid ID. Please try again")
+      }
     }else if(usrInputLower.includes("search") || usrInputLower === "search" ){
       mainOffice.getEmployee((window.prompt("Searching for an Employee \nEnter Email or ID: ")).toLowerCase);
     }else if(usrInputLower.includes("list") || usrInputLower.includes("list all") || usrInputLower === "list all"){
