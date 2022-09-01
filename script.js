@@ -186,13 +186,7 @@ function startProgram(){
 
 ////////// Calling Tasks Funtions //////////
 
-// Task 1 
-
-// Task 2 
-
-
-// Task 3
-
+startProgram();
 
 
 
